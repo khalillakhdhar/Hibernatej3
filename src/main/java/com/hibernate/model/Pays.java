@@ -67,12 +67,11 @@ public class Pays {
 		this.superficie = superficie;
 		this.population = population;
 	}
-	@Override
-	public String toString() {
-		return "Pays [id=" + id + ", nom=" + nom + ", continent=" + continent + ", superficie=" + superficie
-				+ ", population=" + population + "]";
-	}
+double populationSurface()
+{
 	
+return  (this.population/this.getSuperficie());
+}
 	
 	
 	
