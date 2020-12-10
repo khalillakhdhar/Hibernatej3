@@ -11,15 +11,15 @@ import javax.persistence.Id;
 public class Pays {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	long id;
+	private long id;
 	@Column(nullable = false)
-	String nom;
+	private String nom;
 	@Column(nullable = false)
-	String continent;
+	private String continent;
 	@Column(nullable = false)
-	double superficie;
+	private double superficie;
 	@Column(nullable = false)
-	long population;
+	private long population;
 	public long getId() {
 		return id;
 	}
@@ -48,6 +48,23 @@ public class Pays {
 		return population;
 	}
 	public void setPopulation(long population) {
+		this.population = population;
+	}
+	public Pays(long id, String nom, String continent, double superficie, long population) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.continent = continent;
+		this.superficie = superficie;
+		this.population = population;
+	}
+	public Pays() {
+	}
+	public Pays(String nom, String continent, double superficie, long population) {
+		super();
+		this.nom = nom;
+		this.continent = continent;
+		this.superficie = superficie;
 		this.population = population;
 	}
 	
