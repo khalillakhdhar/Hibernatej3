@@ -17,11 +17,12 @@ public class PaysTest {
 		// TODO Auto-generated method stub
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
+		Pays p1=new Pays("Algerie","Afrique",912000,49000000);
 		try
 		{
 		Transaction tx = session.beginTransaction();
 		Query query ;
-
+session.save(p1);
 	 query= session.createQuery("from Pays WHERE continent =:continent");
 	 query.setParameter("continent","europe");
 		List<Pays> paysList = query.list();
@@ -29,14 +30,15 @@ public class PaysTest {
 			//System.out.println("List de pays::"+p.getId()+","+p.getNom()+","+p.getContinent());
 			System.out.println(p.toString());
 		}
-		 query= session.createQuery("SELECT id,nom,population,continent from Pays GROUP BY continent ");
+		 query= session.createQuery("from Pays");
 		// query.setParameter("continent","europe");
 			List<Pays> paysList2 = query.list();
-			for(Pays p : paysList){
+			for(Pays p : paysList2){
 				//System.out.println("List de pays::"+p.getId()+","+p.getNom()+","+p.getContinent());
 				System.out.println(p.toString());
 			}
 		}
+		
 		catch(Exception ex)
 		{
 			System.out.println("exception: "+ex);
