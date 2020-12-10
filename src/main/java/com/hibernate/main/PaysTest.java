@@ -23,7 +23,8 @@ public class PaysTest {
 	 query= session.createQuery("from Pays");
 		List<Pays> empList = query.list();
 		for(Pays p : empList){
-			System.out.println("List de pays::"+p.getId()+","+p.getNom()+","+p.getContinent());
+			//System.out.println("List de pays::"+p.getId()+","+p.getNom()+","+p.getContinent());
+			System.out.println(p.toString());
 		}
 		sessionFactory.close();
 	}
