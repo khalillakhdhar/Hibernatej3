@@ -30,7 +30,7 @@ session.save(p1);
 			//System.out.println("List de pays::"+p.getId()+","+p.getNom()+","+p.getContinent());
 			System.out.println(p.toString());
 		}
-		 query= session.createQuery("from Pays");
+		 query= session.createQuery("from Pays GROUP BY continent ");
 		// query.setParameter("continent","europe");
 			List<Pays> paysList2 = query.list();
 			for(Pays p : paysList2){
